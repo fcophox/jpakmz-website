@@ -1,65 +1,186 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
+import NextLink from "next/link";
+import { Card } from "@heroui/react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight
+} from "lucide-react";
+import { projects } from "@/data/projects";
 
 export default function Home() {
+  const featuredProjects = projects.slice(0, 3);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="whitespace-editorial container mx-auto px-6 max-w-7xl">
+        <motion.div
+          className="max-w-4xl"
+          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="mb-10 mb-12">
+            <h1 className="text-6xl sm:text-[7rem] editorial-title font-medium text-black mb-6 tracking-tighter">
+              JUAN PABLO <br /> ARAKAKI
+            </h1>
+            <p className="text-md font-bold uppercase tracking-[0.3em] text-gray-400 font-mono">
+              Arquitecto Universidad de Chile
+            </p>
+          </div>
+          <div className="flex gap-8 items-center mb-12">
+            <div className="w-24 h-24 rounded-full overflow-hidden border border-gray-100 shadow-sm relative grayscale hover:grayscale-0 transition-all duration-700 flex-shrink-0 cursor-pointer">
+              <Image
+                src="/jp/avatar.png"
+                alt="Juan Pablo Arakaki"
+                fill
+                className="object-cover"
+                sizes="6rem"
+              />
+            </div>
+            <p className="text-lg sm:text-xl text-gray-500 max-w-2xl leading-relaxed font-light">
+              Soluciones arquitectónicas que dialogan entre la escala humana, el impacto comunitario y la conciencia ambiental.
+            </p>
+          </div>
+          <NextLink
+            href="/projects"
+            className="inline-flex bg-black text-white rounded-none px-12 h-16 font-medium text-[10px] uppercase tracking-widest hover:opacity-80 transition-opacity items-center justify-center"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Explorar Proyectos
+          </NextLink>
+        </motion.div>
+      </section>
+
+      {/* Featured Projects Grid */}
+      <section className="bg-gray-subtle py-24 sm:py-32">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="flex justify-between items-end mb-16 px-2">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 font-mono">Seleccionado</p>
+              <h2 className="text-4xl font-medium tracking-tight">Proyectos</h2>
+            </div>
+            <NextLink href="/projects" className="text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1 hover:opacity-50 transition-opacity hidden sm:block">
+              Ver todos los proyectos
+            </NextLink>
+          </div>
+
+          <div className="flex flex-col gap-32">
+            {featuredProjects.map((project, index) => (
+              <motion.div
+                key={project.slug}
+                className={`w-full flex ${index === 0 ? "justify-start" :
+                  index === 1 ? "justify-center" :
+                    "justify-end"
+                  }`}
+                initial={{ opacity: 0, y: 60, filter: "blur(15px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ duration: 1.2, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <Card
+                  className="border-none bg-transparent rounded-none shadow-none group overflow-hidden max-w-2xl w-full"
+                >
+                  <NextLink href={`/projects/${project.slug}`} className="block overflow-hidden relative aspect-[16/10] w-full">
+                    <div className="relative w-full h-full transform group-hover:scale-105 transition-transform duration-700">
+                      <Image
+                        src={project.heroImage}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-all duration-700"
+                        sizes="(max-width: 768px) 100vw, 42rem"
+                        priority={index === 0}
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                  </NextLink>
+                  <div className="mt-8 flex justify-between items-end">
+                    <div>
+                      <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em] mb-2 font-mono">{project.location}</p>
+                      <h3 className="text-3xl font-medium tracking-tight editorial-title">{project.title}</h3>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-mono text-gray-300">{project.year}</p>
+                      <span className="text-[10px] uppercase tracking-widest font-bold inline-block mt-2 border-b border-black/10 group-hover:border-black transition-colors pb-1 cursor-pointer">
+                        Ver Proyecto
+                      </span>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
-      </main>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="whitespace-editorial overflow-hidden">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <motion.div
+              className="aspect-square bg-gray-100 flex items-center justify-center text-gray-300 italic relative overflow-hidden"
+              initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <span className="z-10 text-[10px] uppercase tracking-widest font-bold">Visualización Arquitectónica</span>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-8 underline decoration-gray-200 underline-offset-8 font-mono">Filosofía</p>
+              <h2 className="text-4xl sm:text-5xl font-medium leading-tight mb-8 editorial-title">
+                La arquitectura como medio para la <span className="italic">resonancia social.</span>
+              </h2>
+              <div className="space-y-6 text-gray-600 leading-relaxed text-lg font-light">
+                <p>
+                  Creo que cada proyecto es una oportunidad para redefinir cómo habitamos nuestro entorno. Mi práctica se enfoca en crear espacios que no solo sean visualmente atractivos, sino profundamente conectados con su contexto y las personas que los utilizan.
+                </p>
+                <p>
+                  Desde centros comunitarios a gran escala hasta vivienda urbana modular, el objetivo sigue siendo el mismo: encontrar el equilibrio esencial entre forma, función y futuro.
+                </p>
+              </div>
+              <div className="mt-12">
+                <NextLink href="/about" className="flex items-center gap-4 group text-[10px] font-bold uppercase tracking-widest">
+                  Nuestro enfoque <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                </NextLink>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="bg-black text-white py-32">
+        <motion.div
+          className="container mx-auto px-6 max-w-7xl text-center"
+          initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <h2 className="text-5xl sm:text-7xl font-medium mb-12 editorial-title tracking-tight">Creemos algo <br /> con sentido.</h2>
+          <NextLink
+            href="/contact"
+            className="inline-flex bg-white text-black rounded-none px-12 h-16 font-bold text-[10px] uppercase tracking-widest hover:bg-gray-200 transition-colors items-center justify-center"
+          >
+            Trabajemos juntos
+          </NextLink>
+        </motion.div>
+      </section>
     </div>
   );
 }
+
+
+
+
+
