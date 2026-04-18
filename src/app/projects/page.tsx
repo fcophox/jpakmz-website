@@ -17,12 +17,6 @@ export default function Projects() {
               PROYECTOS
             </h1>
           </div>
-          <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-400 font-mono">
-             <span className="text-black underline underline-offset-8">Todos</span>
-             <span className="hover:text-black cursor-pointer transition-colors">Comunal</span>
-             <span className="hover:text-black cursor-pointer transition-colors">Residencial</span>
-             <span className="hover:text-black cursor-pointer transition-colors">Cultural</span>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 gap-y-20">

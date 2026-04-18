@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Preloader from "@/components/Preloader";
 import Image from "next/image";
 import { Link } from "@heroui/react";
 import NextLink from "next/link";
@@ -32,7 +33,7 @@ export default function RootLayout({
       className={`${sora.variable} light`}
     >
       <body className={`${sora.className} min-h-screen bg-background text-foreground antialiased selection:bg-black selection:text-white`}>
-
+        <Preloader />
         <Navbar />
 
         <main className="pt-20">
@@ -53,14 +54,13 @@ export default function RootLayout({
                   />
                 </NextLink>
                 <p className="text-sm text-gray-400 max-w-sm">
-                  Práctica arquitectónica enfocada en la intersección de la comunidad, el contexto y la innovación sostenible.
+                  Arquitecto enfocado en la intersección de la comunidad, el contexto y la innovación sostenible.
                 </p>
               </div>
               <div className="flex flex-col md:items-end gap-2 text-sm">
                 <p className="text-gray-400 font-mono text-[10px] uppercase tracking-widest">© 2026 JPAKMZ ARQUITECTURA</p>
                 <div className="flex gap-6">
-                  <Link href="#" className="text-black hover:opacity-50 transition-opacity text-xs uppercase tracking-widest font-bold">Instagram</Link>
-                  <Link href="#" className="text-black hover:opacity-50 transition-opacity text-xs uppercase tracking-widest font-bold">LinkedIn</Link>
+                  <Link href="https://www.linkedin.com/in/jpakmz" target="_blank" rel="noopener noreferrer" className="text-black hover:opacity-50 transition-opacity text-xs uppercase tracking-widest font-bold">LinkedIn</Link>
                 </div>
               </div>
             </div>

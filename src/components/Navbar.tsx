@@ -107,8 +107,7 @@ export default function Navbar() {
             <div className="absolute bottom-12 left-6 right-6">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-300 mb-4 font-mono">SOCIAL</p>
               <div className="flex gap-8">
-                <Link href="#" className="text-sm font-bold uppercase tracking-widest text-black hover:opacity-50 transition-opacity">Instagram</Link>
-                <Link href="#" className="text-sm font-bold uppercase tracking-widest text-black hover:opacity-50 transition-opacity">LinkedIn</Link>
+                <Link href="https://www.linkedin.com/in/jpakmz" target="_blank" rel="noopener noreferrer" className="text-sm font-bold uppercase tracking-widest text-black hover:opacity-50 transition-opacity">LinkedIn</Link>
               </div>
             </div>
           </motion.div>
