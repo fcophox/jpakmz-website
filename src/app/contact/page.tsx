@@ -37,22 +37,19 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white/0">
       <section className="whitespace-editorial container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-8 font-mono">Estemos en contacto</p>
-            <h1 className="text-6xl sm:text-8xl editorial-title font-medium leading-tight mb-12 uppercase tracking-tighter">
+            <h1 className="text-4xl sm:text-7xl editorial-title font-medium leading-tight mb-12 uppercase tracking-tighter">
               CONECTEMOS
             </h1>
             <div className="space-y-12">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 font-mono">Estudio</p>
-                <p className="text-lg font-light">Santiago, Chile<br />Av. Nueva Providencia 1353</p>
-              </div>
+
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 font-mono">Consultas</p>
-                <p className="text-lg font-light">studio@jp-arakaki.com<br />+56 9 1234 5678</p>
+                <p className="text-lg font-light">studio@jp-arakaki.com</p>
               </div>
             </div>
           </div>

@@ -12,10 +12,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  // Close menu when route changes
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+
 
   // Prevent scroll when menu is open
   useEffect(() => {
@@ -27,8 +24,8 @@ export default function Navbar() {
   }, [isOpen]);
 
   const navLinks = [
-    { href: "/projects", label: "Proyectos" },
     { href: "/about", label: "Sobre mí" },
+    { href: "/projects", label: "Proyectos" },
     { href: "/contact", label: "Contacto" },
   ];
 
@@ -53,9 +50,9 @@ export default function Navbar() {
               <NextLink
                 key={link.href}
                 href={link.href}
-                className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${
-                  pathname === link.href ? "text-black underline underline-offset-8" : "text-gray-500 hover:text-black"
-                }`}
+                onClick={() => setIsOpen(false)}
+                className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${pathname === link.href ? "text-black underline underline-offset-8" : "text-gray-500 hover:text-black"
+                  }`}
               >
                 {link.label}
               </NextLink>
@@ -93,9 +90,9 @@ export default function Navbar() {
                 >
                   <NextLink
                     href={link.href}
-                    className={`text-4xl font-medium tracking-tighter transition-colors ${
-                      pathname === link.href ? "text-black italic" : "text-gray-400 hover:text-black"
-                    }`}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-4xl font-medium tracking-tighter transition-colors ${pathname === link.href ? "text-black italic" : "text-gray-400 hover:text-black"
+                      }`}
                   >
                     {link.label}
                   </NextLink>

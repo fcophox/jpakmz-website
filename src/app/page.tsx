@@ -14,7 +14,7 @@ export default function Home() {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white/0">
       {/* Hero Section */}
       <section className="whitespace-editorial container mx-auto px-6 max-w-7xl min-h-[70vh] flex flex-col justify-center">
         <motion.div
@@ -81,35 +81,59 @@ export default function Home() {
                 transition={{ duration: 1.2, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               >
                 <Card
-                  className="border-none bg-transparent rounded-none shadow-none group overflow-hidden max-w-2xl w-full"
+                  className="border-none bg-transparent rounded-none shadow-none group overflow-hidden max-w-5xl w-full"
                 >
-                  <NextLink 
-                    href={`/projects/${project.slug}`} 
-                    className="block overflow-hidden relative aspect-[16/10] w-full"
-                    data-cursor="view"
-                  >
-                    <div className="relative w-full h-full transform group-hover:scale-105 transition-transform duration-700">
-                      <Image
-                        src={project.heroImage}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-all duration-700"
-                        sizes="(max-width: 768px) 100vw, 42rem"
-                        priority={index === 0}
-                      />
+                  {/* Number & Line Header */}
+                  <div className="flex items-center gap-6 mb-12">
+                    <span className="text-2xl font-medium font-mono">0{index + 1}</span>
+                    <div className="h-[1.5px] bg-black w-32" />
+                  </div>
+
+                  <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
+                    {/* Image Area - 65% width */}
+                    <div className="w-full md:w-[65%]">
+                      <NextLink
+                        href={`/projects/${project.slug}`}
+                        className="block group"
+                        data-cursor="view"
+                      >
+                        <div className="relative overflow-hidden aspect-[14/10] w-full bg-gray-50">
+                          <div className="relative w-full h-full transform group-hover:scale-105 transition-transform duration-1000">
+                            <Image
+                              src={project.heroImage}
+                              alt={project.title}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, 800px"
+                              priority={index === 0}
+                              unoptimized={true}
+                            />
+                          </div>
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+                        </div>
+                      </NextLink>
                     </div>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-                  </NextLink>
-                  <div className="mt-8 flex justify-between items-end">
-                    <div>
-                      <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em] mb-2 font-mono">{project.location}</p>
-                      <h3 className="text-3xl font-medium tracking-tight editorial-title">{project.title}</h3>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm font-mono text-gray-300">{project.year}</p>
-                      <span className="text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 mt-2 border-b border-black/10 group-hover:border-black transition-colors pb-1 cursor-pointer">
-                        Ver Proyecto <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                      </span>
+
+                    {/* Info Area - 35% width */}
+                    <div className="w-full md:w-[35%] pt-4">
+                      <h3 className="text-3xl sm:text-4xl font-medium tracking-tighter leading-[1.1] mb-4">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 font-mono mb-12 uppercase tracking-widest">
+                        {project.year} | {project.location}
+                      </p>
+
+                      <div className="">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-3 border border-gray-200 rounded-full text-gray-600 inline-block">
+                          Visualización 3D
+                        </span>
+                      </div>
+
+                      <div className="mt-16 sm:mt-24">
+                        <span className="text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 border-b border-black/10 group-hover:border-black transition-colors pb-1 cursor-pointer w-fit">
+                          Ver Proyecto <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </Card>

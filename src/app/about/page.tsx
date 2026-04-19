@@ -29,7 +29,7 @@ export default function About() {
     }
   ];
   return (
-    <div className="bg-white">
+    <div className="bg-white/0">
       <section className="whitespace-editorial container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-20">
           <div className="md:col-span-5 md:sticky md:top-32 md:h-fit">
