@@ -71,7 +71,7 @@ export default function About() {
                   <li className="hover:text-black transition-colors cursor-default">Sistemas Sostenibles</li>
                 </ul>
               </div>
-              
+
               <div className="pt-12 border-t border-gray-50">
                 <p className="text-[10px] font-bold uppercase tracking-widest mb-8 font-mono text-black underline underline-offset-8 decoration-gray-100">Reconocimientos</p>
                 <div className="space-y-8">
@@ -110,7 +110,7 @@ export default function About() {
                     fill
                     className="object-cover"
                     sizes="5rem"
-                  />|
+                  />
                 </div>
                 <div className="max-w-xl">
                   <h2 className="text-xl sm:text-2xl font-light mb-8 leading-relaxed tracking-tight text-gray-600">
