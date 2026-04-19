@@ -25,7 +25,11 @@ export default function Projects() {
               key={project.slug} 
               className="border-none bg-transparent rounded-none shadow-none group overflow-hidden"
             >
-              <NextLink href={`/projects/${project.slug}`} className="block overflow-hidden relative aspect-[3/4]">
+              <NextLink 
+                href={`/projects/${project.slug}`} 
+                className="block overflow-hidden relative aspect-[3/4]"
+                data-cursor="view"
+              >
                 <div className="relative w-full h-full transform group-hover:scale-105 transition-transform duration-700">
                   <Image 
                     src={project.thumbnail} 

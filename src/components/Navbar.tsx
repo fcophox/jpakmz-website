@@ -29,7 +29,6 @@ export default function Navbar() {
   const navLinks = [
     { href: "/projects", label: "Proyectos" },
     { href: "/about", label: "Sobre mí" },
-    { href: "/methodology", label: "Metodología" },
     { href: "/contact", label: "Contacto" },
   ];
 

@@ -153,6 +153,10 @@ Recorrido dinámico que integra historia, cultura y naturaleza mediante múltipl
     sustainability: `**Metodología:** Desarrollo colaborativo con distribución de roles técnicos y reuniones de coordinación semanal. El proyecto obtuvo la **Mención Honrosa (5° lugar)** en un concurso con más de 80 oficinas participantes.`,
     gallery: [
       "/projects/rapanui/render-01-1.png",
+      "/projects/rapanui/render-01-2.png",
+      "/projects/rapanui/render-01-2-1.png",
+      "/projects/rapanui/render-01-2-2.png",
+      "/projects/rapanui/render-01-2-3.png",
       "/projects/rapanui/cover-01.png",
     ],
     tools: [

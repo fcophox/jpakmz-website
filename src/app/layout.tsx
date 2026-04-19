@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Preloader from "@/components/Preloader";
+import CustomCursor from "@/components/CustomCursor";
 import Image from "next/image";
 import { Link } from "@heroui/react";
 import NextLink from "next/link";
@@ -33,6 +34,7 @@ export default function RootLayout({
       className={`${sora.variable} light`}
     >
       <body className={`${sora.className} min-h-screen bg-background text-foreground antialiased selection:bg-black selection:text-white`}>
+        <CustomCursor />
         <Preloader />
         <Navbar />
 

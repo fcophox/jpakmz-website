@@ -16,14 +16,14 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="whitespace-editorial container mx-auto px-6 max-w-7xl">
+      <section className="whitespace-editorial container mx-auto px-6 max-w-7xl min-h-[70vh] flex flex-col justify-center">
         <motion.div
           className="max-w-4xl"
           initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="mb-10 mb-12">
+          <div className="mb-24">
             <h1 className="text-6xl sm:text-[7rem] editorial-title font-medium text-black mb-6 tracking-tighter">
               JUAN PABLO <br /> ARAKAKI
             </h1>
@@ -62,8 +62,8 @@ export default function Home() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 font-mono">Seleccionado</p>
               <h2 className="text-4xl font-medium tracking-tight">Proyectos</h2>
             </div>
-            <NextLink href="/projects" className="text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1 hover:opacity-50 transition-opacity hidden sm:block">
-              Ver todos los proyectos
+            <NextLink href="/projects" className="group text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1 hover:opacity-70 transition-opacity hidden sm:flex items-center gap-2">
+              Ver todos los proyectos <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
             </NextLink>
           </div>
 
@@ -83,7 +83,11 @@ export default function Home() {
                 <Card
                   className="border-none bg-transparent rounded-none shadow-none group overflow-hidden max-w-2xl w-full"
                 >
-                  <NextLink href={`/projects/${project.slug}`} className="block overflow-hidden relative aspect-[16/10] w-full">
+                  <NextLink 
+                    href={`/projects/${project.slug}`} 
+                    className="block overflow-hidden relative aspect-[16/10] w-full"
+                    data-cursor="view"
+                  >
                     <div className="relative w-full h-full transform group-hover:scale-105 transition-transform duration-700">
                       <Image
                         src={project.heroImage}
@@ -103,8 +107,8 @@ export default function Home() {
                     </div>
                     <div className="text-right">
                       <p className="text-sm font-mono text-gray-300">{project.year}</p>
-                      <span className="text-[10px] uppercase tracking-widest font-bold inline-block mt-2 border-b border-black/10 group-hover:border-black transition-colors pb-1 cursor-pointer">
-                        Ver Proyecto
+                      <span className="text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 mt-2 border-b border-black/10 group-hover:border-black transition-colors pb-1 cursor-pointer">
+                        Ver Proyecto <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
                   </div>
@@ -121,14 +125,20 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <motion.div
-              className="aspect-square bg-gray-100 flex items-center justify-center text-gray-300 italic relative overflow-hidden"
+              className="aspect-square relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 group cursor-pointer"
+              data-cursor="view"
               initial={{ opacity: 0, x: -50, filter: "blur(10px)" }}
               whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span className="z-10 text-[10px] uppercase tracking-widest font-bold">Visualización Arquitectónica</span>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent" />
+              <Image
+                src="/pages/filosofia.png"
+                alt="Visualización Arquitectónica"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
