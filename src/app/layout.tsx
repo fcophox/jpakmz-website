@@ -17,8 +17,32 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Juan Pablo Arakaki Martínez | Arquitecto",
-  description: "Portafolio arquitectónico de Juan Pablo Arakaki Martínez. Proyectos arquitectónicos minimalistas, conceptuales y profesionales.",
+  title: "Juan Pablo Arakaki Martínez | Arquitecto y Visualizador 3D",
+  description: "Portafolio arquitectónico de Juan Pablo Arakaki Martínez. Especialista en regeneración urbana, vivienda modular y arquitectura sostenible.",
+  keywords: ["Arquitectura", "Visualización 3D", "Santiago", "Chile", "Diseño Urbano", "Sostenibilidad"],
+  authors: [{ name: "Juan Pablo Arakaki Martínez" }],
+  openGraph: {
+    title: "Juan Pablo Arakaki Martínez | Arquitecto",
+    description: "Explora proyectos arquitectónicos que integran el contexto, la comunidad y la innovación técnica.",
+    url: "https://jp-arakaki.com",
+    siteName: "Arakaki Arquitectura",
+    images: [
+      {
+        url: "/brand/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Juan Pablo Arakaki Martínez - Portafolio de Arquitectura",
+      },
+    ],
+    locale: "es_CL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Juan Pablo Arakaki Martínez | Arquitecto",
+    description: "Arquitectura y Visualización 3D con enfoque sostenible.",
+    images: ["/brand/og-image.jpg"],
+  },
   icons: {
     icon: "/brand/favicon.svg",
   },

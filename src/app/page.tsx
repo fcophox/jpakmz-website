@@ -123,11 +123,7 @@ export default function Home() {
                         {project.year} | {project.location}
                       </p>
 
-                      <div className="">
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-3 border border-gray-200 rounded-full text-gray-600 inline-block">
-                          Visualización 3D
-                        </span>
-                      </div>
+
 
                       <div className="mt-16 sm:mt-24">
                         <span className="text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 border-b border-black/10 group-hover:border-black transition-colors pb-1 cursor-pointer w-fit">
