@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { CheckCircle2, AlertCircle, Loader2, ArrowRight } from "lucide-react";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -47,9 +47,31 @@ export default function Contact() {
             </h1>
             <div className="space-y-12">
 
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 font-mono">Consultas</p>
-                <p className="text-lg font-light">studio@jp-arakaki.com</p>
+              <div className="pt-8">
+                <div className="border border-gray-100 p-10 sm:p-12 space-y-8 group hover:border-black transition-all duration-500 bg-gray-50/30">
+                  <div className="flex justify-between items-start">
+                    <div className="flex items-center gap-4">
+                      <div className="w-8 h-px bg-black/20 group-hover:w-14 group-hover:bg-black transition-all duration-500" />
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-black transition-colors font-mono">Red Profesional</p>
+                    </div>
+                    <svg className="w-5 h-5 fill-black/10 group-hover:fill-black transition-colors" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z" />
+                    </svg>
+                  </div>
+                  
+                  <p className="text-2xl font-light leading-snug">
+                    Te invito a conectar y explorar mi trayectoria en <span className="font-medium italic">LinkedIn.</span>
+                  </p>
+
+                  <a 
+                    href="https://www.linkedin.com/in/jpakmz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest border-b border-black/10 group-hover:border-black transition-all pb-1 pt-4 group/link"
+                  >
+                    Conectar ahora <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
