@@ -7,6 +7,15 @@ import { ArrowRight, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function About() {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const steps = [
     {
       number: "01",
@@ -42,7 +51,7 @@ export default function About() {
             </h1>
             <div className="space-y-8 text-lg text-gray-600 leading-relaxed font-light">
               <p>
-                Soy arquitecto de la Universidad de Chile, dedicado a la creación de espacios que fomentan la comunidad y la resiliencia ambiental.
+                Soy arquitecto de la <span className="font-semibold text-black">Universidad de Chile, mención en territorio y paisaje</span>, dedicado a la creación de espacios que fomentan la comunidad y la resiliencia ambiental.
               </p>
               <p>
                 Con un enfoque en el paisaje chileno y el contexto urbano, mi trabajo une la brecha entre el rigor conceptual y la responsabilidad social.
@@ -85,13 +94,21 @@ export default function About() {
                 priority
               />
 
-              {/* Image 2: COLOR (Mobile reveal on scroll, Desktop reveal on hover) */}
+              {/* Image 2: COLOR (Mobile rotation, Desktop reveal on hover) */}
               <motion.div
                 className="absolute inset-0 z-10"
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                animate={isMobile ? {
+                  opacity: [0, 1, 1, 0]
+                } : {}}
+                whileInView={!isMobile ? { opacity: 1 } : undefined}
                 viewport={{ once: true, amount: 0.6 }}
-                transition={{ duration: 1 }}
+                transition={isMobile ? {
+                  duration: 4,
+                  repeat: Infinity,
+                  times: [0, 0.45, 0.55, 1],
+                  ease: "easeInOut"
+                } : { duration: 1 }}
               >
                 <Image
                   src="/jp/jp-2.JPG"
