@@ -6,7 +6,8 @@ import NextLink from "next/link";
 import { Card } from "@heroui/react";
 import { motion } from "framer-motion";
 import {
-  ArrowRight
+  ArrowRight,
+  ChevronDown
 } from "lucide-react";
 import { projects } from "@/data/projects";
 
@@ -16,7 +17,7 @@ export default function Home() {
   return (
     <div className="bg-white/0">
       {/* Hero Section */}
-      <section className="whitespace-editorial container mx-auto px-6 max-w-7xl min-h-[70vh] flex flex-col justify-center">
+      <section className="relative whitespace-editorial container mx-auto px-6 max-w-7xl min-h-[100vh] flex flex-col justify-center">
         <motion.div
           className="max-w-4xl"
           initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
@@ -24,7 +25,7 @@ export default function Home() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="mb-24">
-            <h1 className="text-6xl sm:text-[7rem] editorial-title font-medium text-black mb-6 tracking-tighter">
+            <h1 className="text-6xl sm:text-[6rem] editorial-title font-medium text-black mb-6 tracking-tighter">
               JUAN PABLO <br /> ARAKAKI
             </h1>
             <p className="text-md font-bold uppercase tracking-[0.3em] text-gray-400 font-mono">
@@ -32,9 +33,9 @@ export default function Home() {
             </p>
           </div>
           <div className="flex gap-8 items-center mb-12">
-            <div className="w-24 h-24 rounded-full overflow-hidden border border-gray-100 shadow-sm relative grayscale hover:grayscale-0 transition-all duration-700 flex-shrink-0 cursor-pointer">
+            <div className="w-24 h-24 rounded-full overflow-hidden border border-gray-100 shadow-sm relative hover:grayscale transition-all duration-700 flex-shrink-0 cursor-pointer">
               <Image
-                src="/jp/avatar.png"
+                src="/jp/avatar-jp.png"
                 alt="Juan Pablo Arakaki"
                 fill
                 className="object-cover"
@@ -47,10 +48,28 @@ export default function Home() {
           </div>
           <NextLink
             href="/projects"
-            className="inline-flex bg-black text-white rounded-none px-12 h-16 font-medium text-[10px] uppercase tracking-widest hover:opacity-80 transition-opacity items-center justify-center"
+            className="inline-flex bg-black text-white rounded-none px-12 h-16 font-medium text-xs uppercase tracking-widest hover:opacity-80 transition-opacity items-center justify-center"
           >
             Explorar Proyectos
           </NextLink>
+        </motion.div>
+
+        {/* Floating Scroll Indicator */}
+        <motion.div
+          className="absolute right-8 bottom-32 hidden md:flex flex-col items-center gap-12 text-gray-400"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 1 }}
+        >
+          <span className="text-[10px] uppercase tracking-[0.5em] font-mono rotate-90 origin-center whitespace-nowrap">
+            Scroll
+          </span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronDown className="w-5 h-5" strokeWidth={1} />
+          </motion.div>
         </motion.div>
       </section>
 
@@ -115,18 +134,24 @@ export default function Home() {
                     </div>
 
                     {/* Info Area - 35% width */}
-                    <div className="w-full md:w-[35%] pt-4">
+                    <div className="w-full md:w-[60%] pt-4">
+                      <span className="w-fit px-2 py-1 bg-black text-white text-sm font-bold font-mono uppercase tracking-[0.2em] leading-none mb-6 block">
+                        {project.year}
+                      </span>
                       <h3 className="text-3xl sm:text-4xl font-medium tracking-tighter leading-[1.1] mb-4">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-gray-400 font-mono mb-12 uppercase tracking-widest">
-                        {project.year} | {project.location}
-                      </p>
+                      <div className="flex flex-col gap-3 mb-12">
+                        <p className="text-md text-gray-400 font-mono uppercase tracking-[0.04em] leading-tight">
+                          {project.location}
+                        </p>
+
+                      </div>
 
 
 
                       <div className="mt-16 sm:mt-24">
-                        <span className="text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 border-b border-black/10 group-hover:border-black transition-colors pb-1 cursor-pointer w-fit">
+                        <span className="text-xs uppercase tracking-widest font-bold flex items-center gap-2 border-b border-black/10 group-hover:border-black transition-colors pb-1 cursor-pointer w-fit">
                           Ver Proyecto <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         </span>
                       </div>

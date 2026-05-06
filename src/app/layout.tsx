@@ -7,6 +7,7 @@ import GridBackground from "@/components/GridBackground";
 import Image from "next/image";
 import { Link } from "@heroui/react";
 import NextLink from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import "./globals.css";
 
 // ... (keep the sora config)
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Juan Pablo Arakaki Martínez | Arquitecto",
     description: "Explora proyectos arquitectónicos que integran el contexto, la comunidad y la innovación técnica.",
-    url: "https://jp-arakaki.com",
+    url: "https://www.jpakmz.com/",
     siteName: "Arakaki Arquitectura",
     images: [
       {
@@ -86,13 +87,20 @@ export default function RootLayout({
                 </p>
               </div>
               <div className="flex md:justify-end">
-                <Link href="https://www.linkedin.com/in/jpakmz" target="_blank" rel="noopener noreferrer" className="text-black hover:opacity-50 transition-opacity text-xs uppercase tracking-[0.3em] font-bold  pb-1">LinkedIn</Link>
+                <Link
+                  href="https://www.linkedin.com/in/jpakmz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link text-black hover:opacity-50 transition-opacity text-xs uppercase tracking-[0.3em] font-bold pb-2"
+                >
+                  LinkedIn <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
 
-            <div className="pt-12 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="pt-12 border-t border-gray-50 flex flex-col  justify-between items-center gap-6">
               <p className="text-gray-400 font-mono text-[9px] uppercase tracking-[0.2em]">
-                © 2026 JPAKMZ ARQUITECTURA. TODOS LOS DERECHOS RESERVADOS.
+                © 2026 | JPAKMZ ARQUITECTURA. TODOS LOS DERECHOS RESERVADOS.
               </p>
               <span className="text-gray-300 text-[9px] uppercase tracking-[0.3em] font-mono">Diseñado por Rukma</span>
             </div>

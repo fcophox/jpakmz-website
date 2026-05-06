@@ -73,9 +73,14 @@ export default function Projects() {
                     <h3 className="text-3xl sm:text-4xl font-medium tracking-tighter leading-[1.1] mb-4">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-gray-400 font-mono mb-12 uppercase tracking-widest">
-                      {project.year} | {project.location}
-                    </p>
+                    <div className="flex flex-col gap-3 mb-12">
+                      <span className="w-fit px-2 py-1 bg-black text-white text-[10px] font-bold font-mono uppercase tracking-[0.2em] leading-none">
+                        {project.year}
+                      </span>
+                      <p className="text-sm text-gray-400 font-mono uppercase tracking-widest leading-tight">
+                        {project.location}
+                      </p>
+                    </div>
 
 
 

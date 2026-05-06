@@ -51,7 +51,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${pathname === link.href ? "text-black underline underline-offset-8" : "text-gray-500 hover:text-black"
+                className={`text-xs font-bold uppercase tracking-widest transition-colors ${pathname === link.href ? "text-black underline underline-offset-8" : "text-gray-500 hover:text-black"
                   }`}
               >
                 {link.label}
