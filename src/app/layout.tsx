@@ -18,6 +18,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.jpakmz.com/"),
   title: "Juan Pablo Arakaki Martínez | Arquitecto y Visualizador 3D",
   description: "Portafolio arquitectónico de Juan Pablo Arakaki Martínez. Especialista en regeneración urbana, vivienda modular y arquitectura sostenible.",
   keywords: ["Arquitectura", "Visualización 3D", "Santiago", "Chile", "Diseño Urbano", "Sostenibilidad"],
@@ -58,6 +59,7 @@ export default function RootLayout({
     <html
       lang="es"
       className={`${sora.variable} light`}
+      suppressHydrationWarning
     >
       <body className={`${sora.className} min-h-screen bg-background text-foreground antialiased selection:bg-black selection:text-white`}>
         <CustomCursor />

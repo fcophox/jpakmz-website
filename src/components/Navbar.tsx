@@ -44,9 +44,9 @@ export default function Navbar() {
             />
           </NextLink>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+            {navLinks.filter(l => l.href !== "/contact").map((link) => (
               <NextLink
                 key={link.href}
                 href={link.href}
@@ -58,6 +58,14 @@ export default function Navbar() {
               </NextLink>
             ))}
           </div>
+
+          {/* Contact Button - Right */}
+          <NextLink
+            href="/contact"
+            className="hidden md:inline-flex items-center px-6 py-2.5 bg-black text-white text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors"
+          >
+            Contacto
+          </NextLink>
 
           {/* Mobile Toggle */}
           <button

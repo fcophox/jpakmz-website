@@ -25,6 +25,7 @@ export default function Home() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="mb-24">
+            <p className="text-lg font-bold tracking-[0.1em] text-gray-500 mb-6 font-light">Hola 👋, mi nombre es</p>
             <h1 className="text-6xl sm:text-[6rem] editorial-title font-medium text-black mb-6 tracking-tighter">
               JUAN PABLO <br /> ARAKAKI
             </h1>
