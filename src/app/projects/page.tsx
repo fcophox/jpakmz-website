@@ -5,7 +5,7 @@ import Image from "next/image";
 import NextLink from "next/link";
 import { Card } from "@heroui/react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
@@ -80,6 +80,14 @@ export default function Projects() {
                       <p className="text-sm text-gray-400 font-mono uppercase tracking-widest leading-tight">
                         {project.location}
                       </p>
+                      <a
+                        href="/portfolio/juan-pablo-arakaki-martinez.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[10px] uppercase tracking-[0.2em] font-bold flex items-center gap-2 border-b border-black/10 hover:border-black transition-colors pb-1 w-fit mt-2"
+                      >
+                        Ver Portafolio <ArrowUpRight className="w-3 h-3" />
+                      </a>
                     </div>
 
 

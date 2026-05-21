@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { projects } from "@/data/projects";
 import { Link } from "@heroui/react";
 import Image from "next/image";
-import { ArrowLeft, PenLine, Box, Image as ImageIcon, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, PenLine, Box, Image as ImageIcon, Sparkles } from "lucide-react";
 
 export default function ProjectDetail() {
    const params = useParams();
@@ -68,18 +68,28 @@ export default function ProjectDetail() {
                      <div className="w-12 h-px bg-black" /> El Proyecto
                   </h2>
 
-                  <div className="space-y-8 font-mono mt-8 md:mt-16 md:pl-16">
-                     <div>
-                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-1">Año</p>
-                        <p className="text-sm font-medium">{project.year}</p>
-                     </div>
-                     <div>
-                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-1">Ubicación</p>
-                        <p className="text-sm font-medium">{project.location}</p>
-                     </div>
-                  </div>
+                   <div className="space-y-8 font-mono mt-8 md:mt-16 md:pl-16">
+                      <div>
+                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-1">A\u00f1o</p>
+                         <p className="text-sm font-medium">{project.year}</p>
+                      </div>
+                      <div>
+                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-1">Ubicaci\u00f3n</p>
+                         <p className="text-sm font-medium">{project.location}</p>
+                      </div>
+                      <div>
+                         <a
+                            href="/portfolio/juan-pablo-arakaki-martinez.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[10px] uppercase tracking-[0.2em] font-bold flex items-center gap-2 border-b border-black/10 hover:border-black transition-colors pb-1 w-fit"
+                         >
+                            Ver Portafolio <ArrowUpRight className="w-3 h-3" />
+                         </a>
+                      </div>
+                    </div>
 
-                </div>
+                 </div>
 
                <div className="md:col-span-8 space-y-24">
                   {/* Narrative Text */}

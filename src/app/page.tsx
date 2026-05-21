@@ -7,6 +7,7 @@ import { Card } from "@heroui/react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  ArrowUpRight,
   ChevronDown
 } from "lucide-react";
 import { projects } from "@/data/projects";
@@ -146,7 +147,6 @@ export default function Home() {
                         <p className="text-md text-gray-400 font-mono uppercase tracking-[0.04em] leading-tight">
                           {project.location}
                         </p>
-
                       </div>
 
 
