@@ -63,7 +63,7 @@ export default function Contact() {
                   <div className="flex flex-col items-start gap-4">
                     <div className="w-16 h-16 rounded-full overflow-hidden border border-white shadow-sm relative hover:grayscale transition-all duration-700 cursor-pointer">
                       <Image
-                        src="/jp/avatar-jp.png"
+                        src="/jp/avatar-jp.webp"
                         alt="Juan Pablo Arakaki"
                         fill
                         className="object-cover"

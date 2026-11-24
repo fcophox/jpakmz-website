@@ -86,7 +86,7 @@ export default function About() {
             >
               {/* Image 1: B&W (Mobile hidden on reach, Desktop hidden on hover) */}
               <Image
-                src="/jp/jp-1.png"
+                src="/jp/jp-1.webp"
                 alt="Juan Pablo Arakaki"
                 fill
                 className="object-cover transition-all duration-1000 group-hover:scale-110 md:group-hover:opacity-0"
@@ -111,7 +111,7 @@ export default function About() {
                 } : { duration: 1 }}
               >
                 <Image
-                  src="/jp/jp-1.png"
+                  src="/jp/jp-1.webp"
                   alt="Juan Pablo Arakaki"
                   fill
                   className="object-cover transition-all duration-1000 group-hover:scale-110 md:opacity-0 md:group-hover:opacity-100"
@@ -283,7 +283,7 @@ export default function About() {
               <div className="flex flex-col gap-8 items-start text-left">
                 <div className="w-20 h-20 rounded-full overflow-hidden border border-white shadow-sm relative hover:grayscale transition-all duration-700 flex-shrink-0 cursor-pointer">
                   <Image
-                    src="/jp/avatar-jp.png"
+                    src="/jp/avatar-jp.webp"
                     alt="Juan Pablo Arakaki"
                     fill
                     className="object-cover"
