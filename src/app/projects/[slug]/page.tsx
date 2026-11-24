@@ -38,6 +38,7 @@ export default function ProjectDetail() {
                   src={project.heroImage}
                   alt={project.title}
                   fill
+                  sizes="100vw"
                   className="object-cover"
                   priority
                />
@@ -128,6 +129,7 @@ export default function ProjectDetail() {
                                           src={img.url}
                                           alt={img.caption}
                                           fill
+                                          sizes="(min-width: 1280px) 830px, (min-width: 768px) 66vw, 100vw"
                                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                                        />
                                     </div>
@@ -154,6 +156,7 @@ export default function ProjectDetail() {
                            src={project.gallery[0]}
                            alt={`${project.title} - Visualización Principal`}
                            fill
+                           sizes="(min-width: 1280px) 830px, (min-width: 768px) 66vw, 100vw"
                            className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                      </div>
@@ -186,6 +189,7 @@ export default function ProjectDetail() {
                                  src={project.gallery[1]}
                                  alt={`${project.title} - Detalle 1`}
                                  fill
+                                 sizes="(min-width: 1280px) 830px, (min-width: 768px) 66vw, 100vw"
                                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                               />
                            </div>
@@ -196,6 +200,7 @@ export default function ProjectDetail() {
                                  src={project.gallery[2]}
                                  alt={`${project.title} - Detalle 2`}
                                  fill
+                                 sizes="(min-width: 1280px) 830px, (min-width: 768px) 66vw, 100vw"
                                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                               />
                            </div>
@@ -216,6 +221,7 @@ export default function ProjectDetail() {
                                     src={img}
                                     alt={`${project.title} - Registro ${idx + 4}`}
                                     fill
+                                    sizes={idx % 3 === 0 ? "(min-width: 1280px) 830px, (min-width: 768px) 66vw, 100vw" : "(min-width: 1280px) 415px, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"}
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                                  />
                               </div>
@@ -237,6 +243,7 @@ export default function ProjectDetail() {
                                     src={drawing.url}
                                     alt={drawing.title}
                                     fill
+                                    sizes="(min-width: 1280px) 830px, (min-width: 768px) 66vw, 100vw"
                                     className="object-contain p-8"
                                  />
                                  <div className="absolute top-4 left-4">
@@ -331,6 +338,7 @@ export default function ProjectDetail() {
                      src={nextProject.heroImage}
                      alt={nextProject.title}
                      fill
+                     sizes="100vw"
                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
 

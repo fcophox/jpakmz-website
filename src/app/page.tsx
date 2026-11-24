@@ -37,7 +37,7 @@ export default function Home() {
           <div className="flex gap-8 items-center mb-12">
             <div className="w-24 h-24 rounded-full overflow-hidden border border-gray-100 shadow-sm relative hover:grayscale transition-all duration-700 flex-shrink-0 cursor-pointer">
               <Image
-                src="/jp/avatar-jp.png"
+                src="/jp/avatar-jp.webp"
                 alt="Juan Pablo Arakaki"
                 fill
                 className="object-cover"
@@ -179,7 +179,7 @@ export default function Home() {
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             >
               <Image
-                src="/pages/filosofia.png"
+                src="/pages/filosofia.webp"
                 alt="Visualización Arquitectónica"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
